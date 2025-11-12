@@ -1,8 +1,25 @@
 # 🎯 STATUS DO PROJETO - HELPDESKFLOW
 
-**Data:** 12 de Novembro de 2025  
-**Desenvolvedor:** Márcio Gil  
-**Repositório:** https://github.com/MarcioGil/Sistema-de-Chamados-Internos
+**Data:** 12 de Novembro de 2025
+
+---
+
+## 👨‍💻 Sobre o Desenvolvedor
+
+**Márcio Gil**  
+🎓 Embaixador da Turma 14 - DIO Campus Expert  
+🎓 Estudante do 5° Período de Engenharia de Software  
+💡 Apaixonado por Educação, Inovação, Tecnologia e Justiça Social
+
+**Conecte-se:**
+- 💼 [LinkedIn](https://linkedin.com/in/márcio-gil-1b7669309)
+- 🌐 [Portfólio/CV](https://marciogil.github.io/curriculum-vitae/)
+- 💻 [GitHub - Perfil](https://github.com/MarcioGil)
+- 📦 [GitHub - Repositório do Projeto](https://github.com/MarcioGil/Sistema-de-Chamados-Internos)
+
+**Links do Projeto:**
+- 🚀 [Frontend LIVE](https://helpdeskflow.vercel.app)
+- 📂 [Repositório Completo](https://github.com/MarcioGil/Sistema-de-Chamados-Internos)
 
 ---
 
@@ -184,14 +201,15 @@ CI/CD: Auto-deploy configurado
 ## 🌐 LINKS DO PROJETO
 
 ### Deploy
-- **Frontend (LIVE):** https://helpdeskflow.vercel.app
+- **Frontend (LIVE):** [https://helpdeskflow.vercel.app](https://helpdeskflow.vercel.app)
 - **Backend:** Aguardando deploy (código 100% pronto)
-- **Repositório:** https://github.com/MarcioGil/Sistema-de-Chamados-Internos
+- **Repositório:** [https://github.com/MarcioGil/Sistema-de-Chamados-Internos](https://github.com/MarcioGil/Sistema-de-Chamados-Internos)
 
-### Desenvolvedor
-- **LinkedIn:** https://linkedin.com/in/márcio-gil-1b7669309
-- **Portfólio/CV:** https://marciogil.github.io/curriculum-vitae/
-- **GitHub:** https://github.com/MarcioGil
+### Desenvolvedor - Márcio Gil
+- **LinkedIn:** [https://linkedin.com/in/márcio-gil-1b7669309](https://linkedin.com/in/márcio-gil-1b7669309)
+- **Portfólio/CV:** [https://marciogil.github.io/curriculum-vitae/](https://marciogil.github.io/curriculum-vitae/)
+- **GitHub - Perfil:** [https://github.com/MarcioGil](https://github.com/MarcioGil)
+- **GitHub - Repositório:** [https://github.com/MarcioGil/Sistema-de-Chamados-Internos](https://github.com/MarcioGil/Sistema-de-Chamados-Internos)
 
 ---
 

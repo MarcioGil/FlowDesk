@@ -58,4 +58,46 @@ export const ticketService = {
     });
     return response.data.comment;
   },
+
+  /**
+   * Faz upload de anexo (PDF)
+   */
+  async uploadAttachment(ticketId: string, file: File) {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const response = await api.post(`/tickets/${ticketId}/attachments`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    return response.data;
+  },
+
+  /**
+   * Baixa um anexo
+   */
+  async downloadAttachment(ticketId: string, filename: string) {
+    const response = await api.get(`/tickets/${ticketId}/attachments/${filename}`, {
+      responseType: 'blob',
+    });
+
+    // Criar link de download
+    const url = window.URL.createObjectURL(new Blob([response.data]));
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', filename);
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.URL.revokeObjectURL(url);
+  },
+
+  /**
+   * Deleta um anexo
+   */
+  async deleteAttachment(ticketId: string, filename: string) {
+    const response = await api.delete(`/tickets/${ticketId}/attachments/${filename}`);
+    return response.data;
+  },
 };

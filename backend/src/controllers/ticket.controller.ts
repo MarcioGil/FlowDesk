@@ -241,4 +241,89 @@ export class TicketController {
       });
     }
   }
+
+  /**
+   * Adiciona um anexo (PDF) ao ticket
+   */
+  async addAttachment(req: Request, res: Response) {
+    try {
+      const { id: ticketId } = req.params;
+      const { id: userId, role: userRole } = (req as any).user;
+
+      if (!req.file) {
+        return res.status(400).json({ error: 'Nenhum arquivo enviado' });
+      }
+
+      const attachment = await ticketService.addAttachment(
+        ticketId,
+        req.file.filename,
+        req.file.originalname,
+        userId,
+        userRole
+      );
+
+      return res.status(201).json({ attachment });
+    } catch (error: any) {
+      console.error('Erro ao adicionar anexo:', error);
+      if (error.message.includes('não encontrado')) {
+        return res.status(404).json({ error: error.message });
+      }
+      if (error.message.includes('permissão')) {
+        return res.status(403).json({ error: error.message });
+      }
+      return res.status(500).json({ error: 'Erro ao adicionar anexo' });
+    }
+  }
+
+  /**
+   * Baixa um anexo do ticket
+   */
+  async downloadAttachment(req: Request, res: Response) {
+    try {
+      const { id: ticketId, filename } = req.params;
+      const { id: userId, role: userRole } = (req as any).user;
+
+      const filePath = await ticketService.getAttachmentPath(ticketId, filename, userId, userRole);
+
+      // Enviar arquivo com nome original
+      return res.download(filePath, filename);
+    } catch (error: any) {
+      if (error.message === 'Ticket não encontrado') {
+        return res.status(404).json({ error: error.message });
+      }
+      if (error.message === 'Anexo não encontrado') {
+        return res.status(404).json({ error: error.message });
+      }
+      if (error.message === 'Arquivo não encontrado no servidor') {
+        return res.status(404).json({ error: error.message });
+      }
+      if (error.message.includes('permissão')) {
+        return res.status(403).json({ error: error.message });
+      }
+      console.error('Erro ao baixar anexo:', error);
+      return res.status(500).json({ error: 'Erro ao baixar anexo' });
+    }
+  }
+
+  /**
+   * Remove um anexo do ticket
+   */
+  async deleteAttachment(req: Request, res: Response) {
+    try {
+      const { id: ticketId, filename } = req.params;
+      const { id: userId, role: userRole } = (req as any).user;
+
+      await ticketService.deleteAttachment(ticketId, filename, userId, userRole);
+      return res.json({ message: 'Anexo removido com sucesso' });
+    } catch (error: any) {
+      console.error('Erro ao remover anexo:', error);
+      if (error.message.includes('não encontrado')) {
+        return res.status(404).json({ error: error.message });
+      }
+      if (error.message.includes('permissão')) {
+        return res.status(403).json({ error: error.message });
+      }
+      return res.status(500).json({ error: 'Erro ao remover anexo' });
+    }
+  }
 }

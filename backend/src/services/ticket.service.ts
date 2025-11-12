@@ -271,4 +271,120 @@ export class TicketService {
 
     return comment;
   }
+  
+  /**
+   * Adiciona um anexo ao ticket
+   */
+  async addAttachment(
+    ticketId: string,
+    filename: string,
+    originalname: string,
+    userId: string,
+    userRole: string
+  ) {
+    // Verificar se ticket existe
+    const ticket = await prisma.ticket.findUnique({ where: { id: ticketId } });
+    if (!ticket) {
+      throw new Error('Ticket não encontrado');
+    }
+
+    // Verificar permissão: criador, atribuído ou admin/atendente
+    if (
+      ticket.createdById !== userId &&
+      ticket.assignedToId !== userId &&
+      userRole !== 'ADMIN' &&
+      userRole !== 'ATTENDANT'
+    ) {
+      throw new Error('Você não tem permissão para adicionar anexos a este ticket');
+    }
+
+    // Atualizar ticket com novo anexo
+    const updatedTicket = await prisma.ticket.update({
+      where: { id: ticketId },
+      data: {
+        attachments: {
+          push: filename,
+        },
+      },
+    });
+
+    return {
+      filename,
+      originalname,
+      url: `/uploads/${filename}`,
+    };
+  }
+
+  /**
+   * Obtém caminho do anexo para download
+   */
+  async getAttachmentPath(ticketId: string, filename: string, userId: string, userRole: string) {
+    // Verificar se ticket existe
+    const ticket = await prisma.ticket.findUnique({ where: { id: ticketId } });
+    if (!ticket) {
+      throw new Error('Ticket não encontrado');
+    }
+
+    // Verificar permissão: criador, atribuído ou admin/atendente
+    if (
+      ticket.createdById !== userId &&
+      ticket.assignedToId !== userId &&
+      userRole !== 'ADMIN' &&
+      userRole !== 'ATTENDANT'
+    ) {
+      throw new Error('Você não tem permissão para acessar anexos deste ticket');
+    }
+
+    // Verificar se anexo existe
+    if (!ticket.attachments.includes(filename)) {
+      throw new Error('Anexo não encontrado');
+    }
+
+    // Verificar se arquivo existe fisicamente
+    const path = require('path');
+    const fs = require('fs');
+    const filePath = path.join(__dirname, '../../uploads', filename);
+
+    if (!fs.existsSync(filePath)) {
+      throw new Error('Arquivo não encontrado no servidor');
+    }
+
+    return filePath;
+  }
+
+  /**
+   * Remove um anexo do ticket
+   */
+  async deleteAttachment(ticketId: string, filename: string, userId: string, userRole: string) {
+    // Verificar se ticket existe
+    const ticket = await prisma.ticket.findUnique({ where: { id: ticketId } });
+    if (!ticket) {
+      throw new Error('Ticket não encontrado');
+    }
+
+    // Verificar permissão: criador ou admin/atendente
+    if (ticket.createdById !== userId && userRole !== 'ADMIN' && userRole !== 'ATTENDANT') {
+      throw new Error('Você não tem permissão para remover anexos deste ticket');
+    }
+
+    // Verificar se anexo existe
+    if (!ticket.attachments.includes(filename)) {
+      throw new Error('Anexo não encontrado');
+    }
+
+    // Remover anexo do array
+    const updatedAttachments = ticket.attachments.filter((att) => att !== filename);
+
+    // Atualizar ticket
+    await prisma.ticket.update({
+      where: { id: ticketId },
+      data: {
+        attachments: updatedAttachments,
+      },
+    });
+
+    // Deletar arquivo físico
+    const { deleteFile } = require('../middlewares/upload');
+    deleteFile(filename);
+  }
 }

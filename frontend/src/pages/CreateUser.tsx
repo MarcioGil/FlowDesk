@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { userService, CreateUserData } from '../services/user.service'
-import { UserRole } from '../types'
 
 const roleOptions = [
   { value: 'USER', label: 'Usuário' },
@@ -9,7 +8,7 @@ const roleOptions = [
   { value: 'ADMIN', label: 'Administrador' },
 ]
 
-export const CreateUser: React.FC = () => {
+export const CreateUser = () => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState<CreateUserData>({
     name: '',

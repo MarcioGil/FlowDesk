@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { ticketService } from '../services/ticket.service'
 import { TicketDetail } from '../types'
 import { useAuthStore } from '../store/useAuthStore'
+import { FileUpload, AttachmentList } from '../components/FileUpload'
 import { 
   priorityColors, 
   priorityLabels, 
@@ -21,6 +22,7 @@ export const TicketDetails: React.FC = () => {
   const [commentMessage, setCommentMessage] = useState('')
   const [isSubmittingComment, setIsSubmittingComment] = useState(false)
   const [commentError, setCommentError] = useState<string | null>(null)
+  const [isUploadingFile, setIsUploadingFile] = useState(false)
 
   useEffect(() => {
     loadTicket()
@@ -75,6 +77,50 @@ export const TicketDetails: React.FC = () => {
     } finally {
       setIsSubmittingComment(false)
     }
+  }
+
+  const handleUploadFile = async (file: File) => {
+    if (!id) return
+
+    try {
+      setIsUploadingFile(true)
+      await ticketService.uploadAttachment(id, file)
+      await loadTicket() // Recarrega ticket com novo anexo
+    } catch (err: any) {
+      throw new Error(err.response?.data?.error || 'Erro ao enviar arquivo')
+    } finally {
+      setIsUploadingFile(false)
+    }
+  }
+
+  const handleDownloadAttachment = async (filename: string) => {
+    if (!id) return
+    try {
+      await ticketService.downloadAttachment(id, filename)
+    } catch (err: any) {
+      alert(err.response?.data?.error || 'Erro ao baixar arquivo')
+    }
+  }
+
+  const handleDeleteAttachment = async (filename: string) => {
+    if (!id) return
+    if (!window.confirm('Tem certeza que deseja remover este anexo?')) return
+
+    try {
+      await ticketService.deleteAttachment(id, filename)
+      await loadTicket() // Recarrega ticket sem o anexo
+    } catch (err: any) {
+      alert(err.response?.data?.error || 'Erro ao remover anexo')
+    }
+  }
+
+  const canManageAttachments = () => {
+    if (!ticket || !user) return false
+    return (
+      user.role === 'ADMIN' ||
+      user.role === 'ATTENDANT' ||
+      user.id === ticket.createdById
+    )
   }
 
   if (isLoading) {
@@ -205,6 +251,31 @@ export const TicketDetails: React.FC = () => {
               </p>
             </div>
           )}
+        </div>
+
+        {/* Attachments Section */}
+        <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">
+            Anexos ({ticket.attachments?.length || 0})
+          </h2>
+
+          {/* Upload Area */}
+          {canManageAttachments() && (
+            <div className="mb-6">
+              <FileUpload 
+                onUpload={handleUploadFile}
+                isUploading={isUploadingFile}
+              />
+            </div>
+          )}
+
+          {/* Attachments List */}
+          <AttachmentList
+            attachments={(ticket.attachments || []).map(filename => ({ filename }))}
+            onDownload={handleDownloadAttachment}
+            onDelete={canManageAttachments() ? handleDeleteAttachment : undefined}
+            canDelete={canManageAttachments()}
+          />
         </div>
 
         {/* Comments Section */}

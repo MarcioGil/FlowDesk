@@ -9,6 +9,11 @@
 
 > **Sistema profissional de gerenciamento de chamados internos com foco em segurança e acessibilidade para PCDs**
 
+## 🌐 Deploy
+
+- 🚀 **Frontend (Vercel)**: [https://helpdeskflow.vercel.app](https://helpdeskflow.vercel.app)
+- 🔧 **Backend (Render)**: [https://dashboard.render.com](https://dashboard.render.com)
+
 ---
 
 ## 👨‍💻 Sobre o Desenvolvedor

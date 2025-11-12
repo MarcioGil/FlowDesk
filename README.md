@@ -1,240 +1,477 @@
-# 🎫 HelpDeskFlow - Sistema de Gerenciamento de Chamados Internos# 🎫 HelpDeskFlow - Sistema Profissional de Gerenciamento de Chamados# 🎫 HelpDeskFlow - Sistema de Gerenciamento de Chamados Internos# 🎫 HelpDeskFlow - Sistema Completo de Gerenciamento de Chamados Internos# 🎫 HelpDeskFlow — Sistema de Chamados Internos# 🎫 HelpDeskFlow — Sistema de Chamados Internos# 🎫 HelpDeskFlow — Sistema de Chamados Internos
+# HelpDeskFlow# 🎫 HelpDeskFlow - Sistema de Gerenciamento de Chamados Internos# 🎫 HelpDeskFlow - Sistema Profissional de Gerenciamento de Chamados# 🎫 HelpDeskFlow - Sistema de Gerenciamento de Chamados Internos# 🎫 HelpDeskFlow - Sistema Completo de Gerenciamento de Chamados Internos# 🎫 HelpDeskFlow — Sistema de Chamados Internos# 🎫 HelpDeskFlow — Sistema de Chamados Internos# 🎫 HelpDeskFlow — Sistema de Chamados Internos
 
 
 
-![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue)
+Sistema completo de Help Desk com 4 recursos de IA integrados.
 
-![React](https://img.shields.io/badge/React-18.3-61dafb)
 
-![Node.js](https://img.shields.io/badge/Node.js-20+-green)<div align="center">
 
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-blue)
+## Funcionalidades Principais![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue)
+
+
+
+### Sistema Base![React](https://img.shields.io/badge/React-18.3-61dafb)
+
+- **Autenticação e Autorização**: JWT com controle de permissões por função
+
+- **Gestão de Chamados**: CRUD completo com sistema de status e prioridades![Node.js](https://img.shields.io/badge/Node.js-20+-green)<div align="center">
+
+- **Dashboard Interativo**: Métricas em tempo real e visualizações
+
+- **Sistema de Comentários**: Comunicação entre atendentes e usuários![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-blue)
+
+- **Exportação PDF**: Relatórios de chamados em PDF
 
 ![Prisma](https://img.shields.io/badge/Prisma-5.7-2D3748)
 
+### Recursos de IA
+
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue)](https://www.typescriptlang.org/)
+#### 1. Chatbot Inteligente
 
-[![WCAG 2.1 AA](https://img.shields.io/badge/WCAG-2.1%20AA-green)](https://www.w3.org/WAI/WCAG21/quickref/)
+- Respostas automáticas usando IA[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue)](https://www.typescriptlang.org/)
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+- Base de conhecimento integrada
 
-> **Sistema completo de gerenciamento de chamados internos com IA, integrações externas e foco em acessibilidade**
+- Sugestões contextuais[![WCAG 2.1 AA](https://img.shields.io/badge/WCAG-2.1%20AA-green)](https://www.w3.org/WAI/WCAG21/quickref/)
+
+
+
+#### 2. Priorização Automática de Chamados![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+
+- Análise de urgência por IA
+
+- Classificação automática de prioridade> **Sistema completo de gerenciamento de chamados internos com IA, integrações externas e foco em acessibilidade**
+
+- Otimização do fluxo de trabalho
 
 ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)[![React](https://img.shields.io/badge/React-18.3-61dafb)](https://reactjs.org/)
 
-[Demo](#-demo) • [Funcionalidades](#-funcionalidades-principais) • [Tecnologias](#-stack-tecnológico) • [Instalação](#-instalação-e-configuração) • [API](#-documentação-da-api)
+#### 3. Sistema NPS Automatizado
 
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+- Pesquisas de satisfação automáticas[Demo](#-demo) • [Funcionalidades](#-funcionalidades-principais) • [Tecnologias](#-stack-tecnológico) • [Instalação](#-instalação-e-configuração) • [API](#-documentação-da-api)
 
----
+- Análise de sentimento por IA
 
-![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)[![Node.js](https://img.shields.io/badge/Node.js-20+-green)](https://nodejs.org/)Sistema moderno e completo para gerenciamento de tickets corporativos, desenvolvido com tecnologias de ponta e funcionalidades avançadas de IA.
+- Métricas e insights em tempo real![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+
+
+
+#### 4. Integrações Empresariais---
+
+- **Slack**: Notificações automáticas
+
+- **Microsoft Teams**: Alertas de chamados![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)[![Node.js](https://img.shields.io/badge/Node.js-20+-green)](https://nodejs.org/)Sistema moderno e completo para gerenciamento de tickets corporativos, desenvolvido com tecnologias de ponta e funcionalidades avançadas de IA.
+
+- **WhatsApp Business**: Comunicação com clientes
 
 ## 📋 Sobre o Projeto
 
+## Tecnologias
+
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-O **HelpDeskFlow** é uma solução empresarial completa para gerenciamento de chamados internos, desenvolvida com as mais modernas tecnologias e melhores práticas de desenvolvimento. O sistema oferece controle total sobre tickets, inteligência artificial para triagem automática, integrações com plataformas externas (Slack, Teams, WhatsApp) e um robusto sistema de análise de satisfação (NPS).
+### Backend
 
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-blue)](https://www.postgresql.org/)
+- Node.js 20+ com TypeScriptO **HelpDeskFlow** é uma solução empresarial completa para gerenciamento de chamados internos, desenvolvida com as mais modernas tecnologias e melhores práticas de desenvolvimento. O sistema oferece controle total sobre tickets, inteligência artificial para triagem automática, integrações com plataformas externas (Slack, Teams, WhatsApp) e um robusto sistema de análise de satisfação (NPS).
 
-### 🎯 Problema que Resolve
+- Express.js 4.18
+
+- Prisma ORM 5.7[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-blue)](https://www.postgresql.org/)
+
+- PostgreSQL 15+
+
+- JWT para autenticação### 🎯 Problema que Resolve
+
+- Zod para validação
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Empresas de todos os portes enfrentam desafios na gestão de solicitações internas:
+### Frontend
 
-[![WCAG 2.1 AA](https://img.shields.io/badge/WCAG-2.1%20AA-green)](https://www.w3.org/WAI/WCAG21/quickref/)[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+- React 18.3 com TypeScriptEmpresas de todos os portes enfrentam desafios na gestão de solicitações internas:
 
-- ❌ Tickets perdidos em emails e mensagens
+- Vite 5.0
 
-- ❌ Falta de rastreabilidade e histórico
+- Tailwind CSS 3.4[![WCAG 2.1 AA](https://img.shields.io/badge/WCAG-2.1%20AA-green)](https://www.w3.org/WAI/WCAG21/quickref/)[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-- ❌ Priorização manual e demorada
+- React Router 6.21
 
-- ❌ Ausência de métricas e KPIs**Sistema completo de gerenciamento de chamados internos com IA, integrações externas e foco em acessibilidade**[![WCAG 2.1 AA](https://img.shields.io/badge/WCAG-2.1%20AA-green)](https://www.w3.org/WAI/WCAG21/quickref/)
+- Axios para requisições- ❌ Tickets perdidos em emails e mensagens
+
+
+
+### Segurança- ❌ Falta de rastreabilidade e histórico
+
+- Helmet.js
+
+- CORS configurado- ❌ Priorização manual e demorada
+
+- Rate limiting
+
+- Bcrypt para senhas- ❌ Ausência de métricas e KPIs**Sistema completo de gerenciamento de chamados internos com IA, integrações externas e foco em acessibilidade**[![WCAG 2.1 AA](https://img.shields.io/badge/WCAG-2.1%20AA-green)](https://www.w3.org/WAI/WCAG21/quickref/)
+
+- Validação de entrada com Zod
 
 - ❌ Dificuldade em medir satisfação
 
+### Acessibilidade
 
+- WCAG 2.1 AA compliant
 
-### ✅ Solução HelpDeskFlow
+- Navegação por teclado
+
+- Labels ARIA### ✅ Solução HelpDeskFlow
+
+- Contraste adequado
 
 [Demo](#-demo) • [Funcionalidades](#-funcionalidades-principais) • [Tecnologias](#-stack-tecnológico) • [Instalação](#-instalação-e-configuração) • [API](#-documentação-da-api)---[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
+## Instalação
+
 - ✅ **Centralização Total** - Todos os chamados em um único sistema
 
-- ✅ **IA Integrada** - Triagem e priorização automática
+### Pré-requisitos
 
-- ✅ **Rastreabilidade** - Histórico completo de cada ticket
+- Node.js 20 ou superior- ✅ **IA Integrada** - Triagem e priorização automática
 
-- ✅ **Integrações** - Slack, Teams e WhatsApp Business</div>> **Sistema profissional de gerenciamento de chamados internos com foco em segurança, acessibilidade para PCDs e funcionalidades inteligentes baseadas em IA**
+- PostgreSQL 15 ou superior
 
-- ✅ **Analytics** - Dashboard com métricas e KPIs em tempo real
+- npm ou yarn- ✅ **Rastreabilidade** - Histórico completo de cada ticket
 
-- ✅ **NPS Automatizado** - Sistema de feedback e satisfação
+
+
+### Backend- ✅ **Integrações** - Slack, Teams e WhatsApp Business</div>> **Sistema profissional de gerenciamento de chamados internos com foco em segurança, acessibilidade para PCDs e funcionalidades inteligentes baseadas em IA**
+
+
+
+```bash- ✅ **Analytics** - Dashboard com métricas e KPIs em tempo real
+
+cd backend
+
+npm install- ✅ **NPS Automatizado** - Sistema de feedback e satisfação
+
+```
 
 - ✅ **Segurança** - RBAC, JWT, bcrypt e rate limiting
+
+Configure o arquivo `.env`:
 
 - ✅ **Acessibilidade** - WCAG 2.1 AA compliant---
 
+```
+
+DATABASE_URL="postgresql://usuario:senha@localhost:5432/helpdeskflow"
+
+JWT_SECRET="sua_chave_secreta_muito_segura"
+
+PORT=3001---
+
+```
 
 
----
 
-
+Execute as migrations:
 
 ## 🌐 Demo## 📋 Sobre o Projeto---
 
+```bash
 
+npx prisma migrate dev
 
-### 🚀 Aplicação em Produção
+npx prisma generate
 
-
-
-- **Frontend (Vercel)**: [https://help-desk-flow-frontend.vercel.app](https://help-desk-flow-frontend.vercel.app)O **HelpDeskFlow** é uma solução empresarial completa para gerenciamento de chamados internos, desenvolvida com as mais modernas tecnologias e melhores práticas de desenvolvimento. O sistema oferece controle total sobre tickets, inteligência artificial para triagem automática, integrações com plataformas externas (Slack, Teams, WhatsApp) e um robusto sistema de análise de satisfação (NPS).## 🌐 Deploy[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue)](https://www.typescriptlang.org/)
-
-- **Backend API (Render)**: REST API completa e documentada
-
-- **Banco de Dados**: PostgreSQL gerenciado (Neon.tech)
+```### 🚀 Aplicação em Produção
 
 
 
-### 👥 Usuários de Teste### 🎯 Problema que Resolve## 🌐 Deploy
+Inicie o servidor:
 
 
 
-| Email | Senha | Role |
+```bash- **Frontend (Vercel)**: [https://help-desk-flow-frontend.vercel.app](https://help-desk-flow-frontend.vercel.app)O **HelpDeskFlow** é uma solução empresarial completa para gerenciamento de chamados internos, desenvolvida com as mais modernas tecnologias e melhores práticas de desenvolvimento. O sistema oferece controle total sobre tickets, inteligência artificial para triagem automática, integrações com plataformas externas (Slack, Teams, WhatsApp) e um robusto sistema de análise de satisfação (NPS).## 🌐 Deploy[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue)](https://www.typescriptlang.org/)
 
-|-------|-------|------|
+npm run dev
 
-| `admin@helpdeskflow.com` | `Admin@123` | 👨‍💼 Administrador |Empresas de todos os portes enfrentam desafios na gestão de solicitações internas:
-
-| `joao.silva@helpdeskflow.com` | `Atendente@123` | 🎧 Atendente |
-
-| `maria.santos@helpdeskflow.com` | `Atendente@123` | 🎧 Atendente |- ❌ Tickets perdidos em emails e mensagens
-
-| `carlos.oliveira@helpdeskflow.com` | `Usuario@123` | 👤 Usuário |
-
-| `ana.paula@helpdeskflow.com` | `Usuario@123` | 👤 Usuário |- ❌ Falta de rastreabilidade e histórico- 🚀 **Frontend (Vercel)**: [https://help-desk-flow-frontend.vercel.app](https://help-desk-flow-frontend.vercel.app)
+```- **Backend API (Render)**: REST API completa e documentada
 
 
 
----- ❌ Priorização manual e demorada
+### Frontend- **Banco de Dados**: PostgreSQL gerenciado (Neon.tech)
 
 
 
-## 🚀 Funcionalidades Principais- ❌ Ausência de métricas e KPIs- 🔧 **Backend (Render)**: API REST completa- **Frontend:** [https://help-desk-flow-frontend.vercel.app](https://help-desk-flow-frontend.vercel.app)[![React](https://img.shields.io/badge/React-18.3-61dafb)](https://reactjs.org/)[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)  
+```bash
+
+cd frontend
+
+npm install### 👥 Usuários de Teste### 🎯 Problema que Resolve## 🌐 Deploy
+
+npm run dev
+
+```
 
 
 
-### 🔐 Autenticação e Autorização- ❌ Dificuldade em medir satisfação
+O frontend estará disponível em `http://localhost:5173`| Email | Senha | Role |
 
 
 
-**Recursos de Segurança:**- 💾 **Banco de Dados**: PostgreSQL (Neon.tech)
+## Credenciais de Teste|-------|-------|------|
 
 
 
-- ✅ JWT (JSON Web Token) stateless### ✅ Solução HelpDeskFlow
+Após executar as migrations, use estas credenciais:| `admin@helpdeskflow.com` | `Admin@123` | 👨‍💼 Administrador |Empresas de todos os portes enfrentam desafios na gestão de solicitações internas:
+
+
+
+| Função | Email | Senha | Permissões || `joao.silva@helpdeskflow.com` | `Atendente@123` | 🎧 Atendente |
+
+|--------|-------|-------|------------|
+
+| Administrador | admin@helpdeskflow.com | Admin123! | Todas || `maria.santos@helpdeskflow.com` | `Atendente@123` | 🎧 Atendente |- ❌ Tickets perdidos em emails e mensagens
+
+| Atendente | attendant@helpdeskflow.com | Attendant123! | Gerenciar chamados |
+
+| Usuário | user@helpdeskflow.com | User123! | Criar chamados || `carlos.oliveira@helpdeskflow.com` | `Usuario@123` | 👤 Usuário |
+
+
+
+## Estrutura do Projeto| `ana.paula@helpdeskflow.com` | `Usuario@123` | 👤 Usuário |- ❌ Falta de rastreabilidade e histórico- 🚀 **Frontend (Vercel)**: [https://help-desk-flow-frontend.vercel.app](https://help-desk-flow-frontend.vercel.app)
+
+
+
+```
+
+HelpDeskFlow/
+
+├── backend/---- ❌ Priorização manual e demorada
+
+│   ├── src/
+
+│   │   ├── controllers/
+
+│   │   ├── middlewares/
+
+│   │   ├── routes/## 🚀 Funcionalidades Principais- ❌ Ausência de métricas e KPIs- 🔧 **Backend (Render)**: API REST completa- **Frontend:** [https://help-desk-flow-frontend.vercel.app](https://help-desk-flow-frontend.vercel.app)[![React](https://img.shields.io/badge/React-18.3-61dafb)](https://reactjs.org/)[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)  
+
+│   │   ├── services/
+
+│   │   └── types/
+
+│   ├── prisma/
+
+│   └── package.json### 🔐 Autenticação e Autorização- ❌ Dificuldade em medir satisfação
+
+├── frontend/
+
+│   ├── src/
+
+│   │   ├── components/
+
+│   │   ├── pages/**Recursos de Segurança:**- 💾 **Banco de Dados**: PostgreSQL (Neon.tech)
+
+│   │   ├── services/
+
+│   │   └── types/
+
+│   └── package.json
+
+└── README.md- ✅ JWT (JSON Web Token) stateless### ✅ Solução HelpDeskFlow
+
+```
 
 - ✅ Bcrypt com 12 rounds de salt
 
+## Scripts Disponíveis
+
 - ✅ RBAC (Role-Based Access Control)- **Backend API:** Hospedada na Render
 
-- ✅ Rate limiting (5 tentativas/15min)
+### Backend
 
-- ✅ Refresh tokens automáticos- ✅ **Centralização Total** - Todos os chamados em um único sistema
+- `npm run dev` - Inicia servidor de desenvolvimento- ✅ Rate limiting (5 tentativas/15min)
+
+- `npm run build` - Compila TypeScript
+
+- `npm start` - Inicia servidor de produção- ✅ Refresh tokens automáticos- ✅ **Centralização Total** - Todos os chamados em um único sistema
+
+- `npm run prisma:migrate` - Executa migrations
 
 - ✅ Proteção XSS e SQL Injection
 
-- ✅ **IA Integrada** - Triagem e priorização automática---
+### Frontend
 
-**Níveis de Acesso:**
+- `npm run dev` - Inicia servidor de desenvolvimento- ✅ **IA Integrada** - Triagem e priorização automática---
 
-- ✅ **Rastreabilidade** - Histórico completo de cada ticket
+- `npm run build` - Build de produção
 
-- 👤 **Usuário** - Criar e visualizar seus tickets
+- `npm run preview` - Preview do build**Níveis de Acesso:**
 
-- 🎧 **Atendente** - Gerenciar tickets atribuídos- ✅ **Integrações** - Slack, Teams e WhatsApp Business- **Banco de Dados:** PostgreSQL (Neon.tech)[![Node.js](https://img.shields.io/badge/Node.js-20+-green)](https://nodejs.org/)
 
-- 👨‍💼 **Admin** - Controle total do sistema
 
-- ✅ **Analytics** - Dashboard com métricas e KPIs em tempo real
+## API Endpoints- ✅ **Rastreabilidade** - Histórico completo de cada ticket
 
-### 🎫 Gestão Completa de Tickets
+
+
+### Autenticação- 👤 **Usuário** - Criar e visualizar seus tickets
+
+- `POST /api/auth/login` - Login de usuário
+
+- `POST /api/auth/register` - Registro de novo usuário- 🎧 **Atendente** - Gerenciar tickets atribuídos- ✅ **Integrações** - Slack, Teams e WhatsApp Business- **Banco de Dados:** PostgreSQL (Neon.tech)[![Node.js](https://img.shields.io/badge/Node.js-20+-green)](https://nodejs.org/)
+
+
+
+### Chamados- 👨‍💼 **Admin** - Controle total do sistema
+
+- `GET /api/tickets` - Lista todos os chamados
+
+- `GET /api/tickets/:id` - Detalhes de um chamado- ✅ **Analytics** - Dashboard com métricas e KPIs em tempo real
+
+- `POST /api/tickets` - Cria novo chamado
+
+- `PUT /api/tickets/:id` - Atualiza chamado### 🎫 Gestão Completa de Tickets
+
+- `DELETE /api/tickets/:id` - Remove chamado
 
 - ✅ **NPS Automatizado** - Sistema de feedback e satisfação## 📋 Sobre o Projeto
 
-#### Operações CRUD Completas
+### Dashboard
+
+- `GET /api/dashboard/stats` - Estatísticas gerais#### Operações CRUD Completas
+
+- `GET /api/dashboard/charts` - Dados para gráficos
 
 - ✅ **Segurança** - RBAC, JWT, bcrypt e rate limiting
 
-- ✅ **Criar** tickets com título, descrição, categoria e prioridade
+### IA - Chatbot
 
-- ✅ **Visualizar** todos os tickets com filtros avançados- ✅ **Acessibilidade** - WCAG 2.1 AA compliant
+- `POST /api/chatbot/message` - Envia mensagem ao chatbot- ✅ **Criar** tickets com título, descrição, categoria e prioridade
+
+
+
+### IA - Priorização- ✅ **Visualizar** todos os tickets com filtros avançados- ✅ **Acessibilidade** - WCAG 2.1 AA compliant
+
+- `POST /api/tickets/prioritize` - Prioriza chamado automaticamente
 
 - ✅ **Editar** status, prioridade, atribuição e categoria
 
-- ✅ **Deletar** tickets (apenas Admin)
+### IA - NPS
 
-- ✅ **Histórico** automático de todas as alterações
+- `GET /api/feedback/nps` - Obtém pesquisas NPS- ✅ **Deletar** tickets (apenas Admin)
 
-- ✅ **Anexos** - Upload de arquivos PDF (até 10MB)---O **HelpDeskFlow** é um sistema completo e profissional de gerenciamento de chamados internos para empresas de todos os tamanhos. Permite que funcionários abram solicitações para diferentes setores (TI, RH, Financeiro, Compras, Infraestrutura) com rastreabilidade completa, métricas de desempenho e controle de acesso baseado em roles (RBAC).
+- `POST /api/feedback/nps` - Cria nova pesquisa NPS
 
-
-
-#### Categorias e Departamentos
+- `GET /api/feedback/analysis` - Análise de sentimentos- ✅ **Histórico** automático de todas as alterações
 
 
 
-- 💻 **TI** - Suporte técnico e sistemas## 🌐 Demo---[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-blue)](https://www.postgresql.org/)[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue)](https://www.typescriptlang.org/)[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue)](https://www.typescriptlang.org/)  
+### Integrações- ✅ **Anexos** - Upload de arquivos PDF (até 10MB)---O **HelpDeskFlow** é um sistema completo e profissional de gerenciamento de chamados internos para empresas de todos os tamanhos. Permite que funcionários abram solicitações para diferentes setores (TI, RH, Financeiro, Compras, Infraestrutura) com rastreabilidade completa, métricas de desempenho e controle de acesso baseado em roles (RBAC).
 
-- 👥 **RH** - Recursos Humanos
+- `GET /api/integrations` - Lista integrações
 
-- 💰 **Financeiro** - Contabilidade e finanças
+- `POST /api/integrations/slack` - Configura Slack
 
-- 🛒 **Compras** - Aquisições e procurement
+- `POST /api/integrations/teams` - Configura Teams
 
-- 🏗️ **Infraestrutura** - Facilities e manutenção### 🚀 Aplicação em Produção### 🎯 Problema que Resolve
-
-
-
-#### Níveis de Prioridade
+- `POST /api/integrations/whatsapp` - Configura WhatsApp#### Categorias e Departamentos
 
 
+
+## Características de Segurança
+
+
+
+- Autenticação JWT com tokens seguros- 💻 **TI** - Suporte técnico e sistemas## 🌐 Demo---[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-blue)](https://www.postgresql.org/)[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue)](https://www.typescriptlang.org/)[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue)](https://www.typescriptlang.org/)  
+
+- Senhas criptografadas com bcrypt
+
+- Rate limiting para prevenir ataques- 👥 **RH** - Recursos Humanos
+
+- Validação de entrada com Zod
+
+- Headers de segurança com Helmet- 💰 **Financeiro** - Contabilidade e finanças
+
+- CORS configurado adequadamente
+
+- SQL injection protegido (Prisma ORM)- 🛒 **Compras** - Aquisições e procurement
+
+
+
+## Características de Performance- 🏗️ **Infraestrutura** - Facilities e manutenção### 🚀 Aplicação em Produção### 🎯 Problema que Resolve
+
+
+
+- Lazy loading de componentes React
+
+- Code splitting automático (Vite)
+
+- Otimização de imagens#### Níveis de Prioridade
+
+- Cache de requisições
+
+- Queries otimizadas (Prisma)
+
+- Índices no banco de dados
 
 - 🔴 **Urgente** - Requer ação imediata- **Frontend (Vercel)**: [https://help-desk-flow-frontend.vercel.app](https://help-desk-flow-frontend.vercel.app)
 
+## Contribuindo
+
 - 🟠 **Alta** - Importante, resolver em breve
 
-- 🟡 **Média** - Prioridade normal- **Backend API (Render)**: REST API completa e documentada
+1. Faça um fork do projeto
 
-- 🟢 **Baixa** - Pode aguardar
+2. Crie uma branch para sua feature (`git checkout -b feature/NovaFuncionalidade`)- 🟡 **Média** - Prioridade normal- **Backend API (Render)**: REST API completa e documentada
+
+3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
+
+4. Push para a branch (`git push origin feature/NovaFuncionalidade`)- 🟢 **Baixa** - Pode aguardar
+
+5. Abra um Pull Request
 
 - **Banco de Dados**: PostgreSQL gerenciado (Neon.tech)Empresas enfrentam o desafio de gerenciar solicitações internas de forma organizada. O HelpDeskFlow oferece:
 
+## Licença
+
 #### Status de Acompanhamento
 
+Este projeto está sob a licença MIT.
 
+
+
+## Suporte
 
 - 🆕 **Aberto** - Ticket criado, aguardando análise
 
+Para dúvidas ou problemas, abra uma issue no GitHub.
+
 - 🔍 **Em Análise** - Sendo avaliado### 👥 Usuários de Teste## 🚀 Funcionalidades Principais[![WCAG 2.1 AA](https://img.shields.io/badge/WCAG-2.1%20AA-green)](https://www.w3.org/WAI/WCAG21/quickref/)
+
+## Roadmap
 
 - ⚙️ **Em Progresso** - Em resolução
 
-- ✅ **Concluído** - Ticket finalizado
+- [ ] Notificações push
+
+- [ ] App mobile (React Native)- ✅ **Concluído** - Ticket finalizado
+
+- [ ] Integração com mais plataformas
+
+- [ ] Relatórios avançados
+
+- [ ] Sistema de tags
+
+- [ ] Multi-idioma### 🤖 IA - Chatbot de Triagem Automática| Email | Senha | Role |- ✅ **Centralização** de todas as solicitações em um único sistema
 
 
 
-### 🤖 IA - Chatbot de Triagem Automática| Email | Senha | Role |- ✅ **Centralização** de todas as solicitações em um único sistema
+## Autor
 
 
 
-#### Inteligência Artificial Integrada|-------|-------|------|
+Desenvolvido com foco em qualidade, segurança e experiência do usuário.#### Inteligência Artificial Integrada|-------|-------|------|
+
 
 
 

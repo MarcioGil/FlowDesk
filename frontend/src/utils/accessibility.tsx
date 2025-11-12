@@ -1,4 +1,4 @@
-import { useEffect, useRef, FocusEvent } from 'react';
+import { useEffect, useRef } from 'react';
 
 /**
  * Utilitários de acessibilidade para PCDs

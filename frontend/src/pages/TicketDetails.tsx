@@ -18,6 +18,9 @@ export const TicketDetails: React.FC = () => {
   const [ticket, setTicket] = useState<TicketDetail | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [commentMessage, setCommentMessage] = useState('')
+  const [isSubmittingComment, setIsSubmittingComment] = useState(false)
+  const [commentError, setCommentError] = useState<string | null>(null)
 
   useEffect(() => {
     loadTicket()
@@ -55,6 +58,23 @@ export const TicketDetails: React.FC = () => {
       user.role === 'ATTENDANT' ||
       (user.id === ticket.createdById && ticket.status === 'OPEN')
     )
+  }
+
+  const handleSubmitComment = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!id || !commentMessage.trim()) return
+
+    try {
+      setIsSubmittingComment(true)
+      setCommentError(null)
+      await ticketService.addComment(id, commentMessage.trim())
+      setCommentMessage('')
+      await loadTicket() // Recarrega ticket com novo comentário
+    } catch (err: any) {
+      setCommentError(err.response?.data?.error || 'Erro ao adicionar comentário')
+    } finally {
+      setIsSubmittingComment(false)
+    }
   }
 
   if (isLoading) {
@@ -187,12 +207,62 @@ export const TicketDetails: React.FC = () => {
           )}
         </div>
 
-        {/* Comments Section - Placeholder */}
+        {/* Comments Section */}
         <div className="bg-white rounded-lg shadow-sm p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Comentários</h2>
-          <p className="text-gray-500 text-center py-8">
-            Sistema de comentários será implementado em breve
-          </p>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">
+            Comentários ({ticket.comments?.length || 0})
+          </h2>
+
+          {/* Comment Form */}
+          <form onSubmit={handleSubmitComment} className="mb-6">
+            <div className="mb-2">
+              <textarea
+                value={commentMessage}
+                onChange={(e) => setCommentMessage(e.target.value)}
+                placeholder="Adicione um comentário..."
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                rows={3}
+                disabled={isSubmittingComment}
+              />
+            </div>
+            {commentError && (
+              <div className="mb-2 text-sm text-red-600">{commentError}</div>
+            )}
+            <div className="flex justify-end">
+              <button
+                type="submit"
+                disabled={isSubmittingComment || !commentMessage.trim()}
+                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmittingComment ? 'Enviando...' : 'Adicionar Comentário'}
+              </button>
+            </div>
+          </form>
+
+          {/* Comments List */}
+          <div className="space-y-4">
+            {ticket.comments && ticket.comments.length > 0 ? (
+              ticket.comments.map((comment) => (
+                <div
+                  key={comment.id}
+                  className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors"
+                >
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <p className="font-medium text-gray-900">{comment.user.name}</p>
+                      <p className="text-sm text-gray-500">{comment.user.email}</p>
+                    </div>
+                    <p className="text-xs text-gray-400">{formatDate(comment.createdAt)}</p>
+                  </div>
+                  <p className="text-gray-700 whitespace-pre-wrap mt-2">{comment.message}</p>
+                </div>
+              ))
+            ) : (
+              <p className="text-gray-500 text-center py-8">
+                Nenhum comentário ainda. Seja o primeiro a comentar!
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </div>

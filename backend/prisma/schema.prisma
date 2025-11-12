@@ -44,6 +44,8 @@ model User {
   ticketsAssigned  Ticket[]        @relation("TicketAssignee")
   comments         Comment[]
   historyChanges   TicketHistory[]
+  feedbacks        Feedback[]
+  chatMessages     ChatMessage[]
 
   @@map("users")
 }
@@ -66,6 +68,7 @@ model Ticket {
   assignedTo User?           @relation("TicketAssignee", fields: [assignedToId], references: [id])
   comments   Comment[]
   history    TicketHistory[]
+  feedback   Feedback?
 
   @@index([status])
   @@index([category])
@@ -103,4 +106,67 @@ model TicketHistory {
 
   @@index([ticketId])
   @@map("ticket_history")
+}
+
+enum IntegrationType {
+  SLACK
+  TEAMS
+  WHATSAPP
+}
+
+enum FeedbackRating {
+  VERY_POOR
+  POOR
+  AVERAGE
+  GOOD
+  EXCELLENT
+}
+
+model Integration {
+  id          String          @id @default(uuid())
+  type        IntegrationType
+  name        String
+  webhookUrl  String?         @map("webhook_url")
+  apiKey      String?         @map("api_key")
+  active      Boolean         @default(true)
+  config      Json?           // Configurações específicas de cada integração
+  createdAt   DateTime        @default(now()) @map("created_at")
+  updatedAt   DateTime        @updatedAt @map("updated_at")
+
+  @@map("integrations")
+}
+
+model Feedback {
+  id          String         @id @default(uuid())
+  ticketId    String         @unique @map("ticket_id")
+  userId      String         @map("user_id")
+  rating      FeedbackRating
+  npsScore    Int?           @map("nps_score") // 0-10
+  comment     String?        @db.Text
+  createdAt   DateTime       @default(now()) @map("created_at")
+
+  // Relações
+  ticket Ticket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id])
+
+  @@index([ticketId])
+  @@index([rating])
+  @@map("feedbacks")
+}
+
+model ChatMessage {
+  id          String   @id @default(uuid())
+  sessionId   String   @map("session_id")
+  userId      String?  @map("user_id")
+  message     String   @db.Text
+  isBot       Boolean  @default(false) @map("is_bot")
+  metadata    Json?    // Armazena sugestões, análises, etc
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  // Relações
+  user User? @relation(fields: [userId], references: [id])
+
+  @@index([sessionId])
+  @@index([userId])
+  @@map("chat_messages")
 }

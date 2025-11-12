@@ -1,10 +1,10 @@
 # 🎫 HelpDeskFlow — Sistema de Chamados Internos
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-18.3-61dafb)](https://reactjs.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-20+-green)](https://nodejs.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-blue)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)  
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue)](https://www.typescriptlang.org/)  
+[![React](https://img.shields.io/badge/React-18.3-61dafb)](https://reactjs.org/)  
+[![Node.js](https://img.shields.io/badge/Node.js-20+-green)](https://nodejs.org/)  
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-blue)](https://www.postgresql.org/)  
 [![WCAG 2.1 AA](https://img.shields.io/badge/WCAG-2.1%20AA-green)](https://www.w3.org/WAI/WCAG21/quickref/)
 
 > **Sistema profissional de gerenciamento de chamados internos com foco em segurança e acessibilidade para PCDs**
@@ -482,5 +482,6 @@ Se tiver dúvidas ou problemas, abra uma [issue](https://github.com/MarcioGil/He
 ⭐ Se este projeto foi útil, considere dar uma estrela!
 
 </div>
- 
+
+ 
  

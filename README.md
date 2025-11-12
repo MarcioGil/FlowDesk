@@ -20,9 +20,9 @@
 
 **Conecte-se:**
 - 💼 [LinkedIn](https://linkedin.com/in/márcio-gil-1b7669309)
-- 🌐 [Portfólio](https://marciogil.github.io/curriculum-vitae/)
-- 💻 [GitHub](https://github.com/MarcioGil/MarcioGil.gi)
-- 📦 [Repositório do Projeto](https://github.com/MarcioGil/HelpDeskFlow.git)
+- 🌐 [Portfólio/CV](https://marciogil.github.io/curriculum-vitae/)
+- 💻 [GitHub](https://github.com/MarcioGil)
+- 📦 [Repositório do Projeto](https://github.com/MarcioGil/Sistema-de-Chamados-Internos.git)
 
 ---
 
@@ -53,19 +53,34 @@ Empresas de todos os tamanhos enfrentam o desafio de gerenciar solicitações in
 - ✅ Senhas criptografadas com bcrypt (12 rounds)
 
 ### 🎫 Gestão de Tickets
-- ✅ Criar chamados com categorias e prioridades
-- ✅ Atribuir responsáveis
+- ✅ Criar, editar e visualizar chamados
+- ✅ Categorias: TI, RH, Financeiro, Compras, Infraestrutura
+- ✅ 4 níveis de prioridade (Baixa, Média, Alta, Urgente)
+- ✅ Atribuir responsáveis (atendentes)
 - ✅ Atualizar status (Aberto → Em Análise → Em Progresso → Concluído)
-- ✅ Sistema de comentários
+- ✅ Sistema de comentários em tempo real
+- ✅ Upload de arquivos PDF (até 10MB)
+- ✅ Download e exclusão de anexos
 - ✅ Histórico automático de mudanças
-- ✅ Upload de arquivos (opcional)
+- ✅ Filtros: Todos, Meus Tickets, Atribuídos a Mim
 
 ### 📊 Dashboard e Métricas
-- ✅ Tickets abertos por categoria
-- ✅ Tempo médio de resolução
-- ✅ Desempenho por atendente
-- ✅ Gráficos de tendência (últimos 7 dias)
-- ✅ Identificação de gargalos
+- ✅ 4 cards de resumo (Total, Abertos, Em Progresso, Concluídos)
+- ✅ Gráficos de tickets por categoria (com percentuais)
+- ✅ Gráficos de tickets por prioridade (color-coded)
+- ✅ Tabela dos 5 tickets mais recentes
+- ✅ Botões de ação rápida (Novo Ticket, Meus Tickets, Atribuídos)
+- ✅ Métricas em tempo real
+- ✅ Interface responsiva
+
+### 👤 Gerenciamento de Usuários (Admin)
+- ✅ Listar todos os usuários
+- ✅ Criar novos usuários
+- ✅ Editar usuários existentes
+- ✅ Ativar/desativar contas
+- ✅ Alterar perfis e permissões
+- ✅ Validação de email único
+- ✅ Proteção contra auto-exclusão
 
 ### ♿ Acessibilidade (WCAG 2.1 AA)
 - ✅ Navegação completa por teclado

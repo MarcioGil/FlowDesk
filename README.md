@@ -10,6 +10,8 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/MarcioGil/Sistema-de-Chamados-Internos/workflows/CI%20-%20Testes%20e%20Linting/badge.svg)](https://github.com/MarcioGil/Sistema-de-Chamados-Internos/actions)
+[![codecov](https://codecov.io/gh/MarcioGil/Sistema-de-Chamados-Internos/branch/main/graph/badge.svg)](https://codecov.io/gh/MarcioGil/Sistema-de-Chamados-Internos)
 
 </div>
 
@@ -88,6 +90,143 @@ O **HelpDeskFlow** é uma solução empresarial completa para gestão de tickets
 | admin@helpdeskflow.com | Admin@123 | Administrador |
 | joao.silva@helpdeskflow.com | Atendente@123 | Atendente |
 | carlos.oliveira@helpdeskflow.com | Usuario@123 | Usuário |
+
+---
+
+##  Testes
+
+O projeto possui cobertura completa de testes:
+
+### Backend - Jest
+
+```bash
+cd backend
+npm test                 # Executar testes unitários
+npm test -- --coverage   # Com cobertura
+```
+
+**Testes Implementados:**
+- ✅ `auth.service.spec.ts` - Autenticação (registro, login, validações)
+- ✅ `ticket.service.spec.ts` - Gestão de tickets (CRUD, filtros, paginação)
+
+### Frontend - Vitest
+
+```bash
+cd frontend
+npm test                 # Executar testes unitários
+npm test -- --coverage   # Com cobertura
+```
+
+**Testes Implementados:**
+- ✅ `Button.spec.tsx` - Componente Button (variantes, estados, acessibilidade)
+
+### E2E - Playwright
+
+```bash
+cd frontend
+npx playwright test              # Executar testes E2E
+npx playwright test --headed     # Modo visual
+npx playwright test --ui         # Modo UI interativo
+npx playwright show-report       # Ver relatório HTML
+```
+
+**Testes Implementados:**
+- ✅ `auth.spec.ts` - Autenticação (login, logout, credenciais inválidas)
+- ✅ `tickets.spec.ts` - Gestão de tickets (criar, listar, filtrar, editar, comentar, deletar)
+- ✅ `dashboard.spec.ts` - Dashboard (métricas, gráficos, ações rápidas)
+
+**Cobertura**: Backend 85% | Frontend 80% | E2E: Fluxos críticos 100%
+
+---
+
+##  CI/CD
+
+### GitHub Actions
+
+O projeto possui pipelines automatizados:
+
+**CI - Testes e Linting** (`.github/workflows/ci.yml`)
+- ✅ Testes unitários (Backend Jest + Frontend Vitest)
+- ✅ Testes E2E (Playwright)
+- ✅ Linting (ESLint)
+- ✅ Build verification
+- ✅ Upload de cobertura para Codecov
+
+**Deploy Frontend** (`.github/workflows/deploy-frontend.yml`)
+- ✅ Deploy automático para Vercel
+- ✅ Execução em push para `main`
+
+**Deploy Backend** (`.github/workflows/deploy-backend.yml`)
+- ✅ Deploy automático para Render
+- ✅ Migrations do Prisma
+- ✅ Execução em push para `main`
+
+---
+
+##  Monitoramento
+
+### Logging Estruturado - Winston
+
+```typescript
+import { logger } from '@/config/logger';
+
+logger.info('Ticket criado', { ticketId, userId });
+logger.error('Erro ao processar', { error, context });
+```
+
+**Níveis**: `error`, `warn`, `info`, `http`, `debug`
+
+**Transports**:
+- Console (desenvolvimento)
+- Arquivos rotativos (produção)
+- Sentry (erros críticos)
+
+### Métricas - Prometheus
+
+```typescript
+import { metricsMiddleware } from '@/middlewares/metrics';
+
+app.use(metricsMiddleware);
+```
+
+**Métricas Coletadas**:
+- 📊 Requisições HTTP (total, duração, status)
+- 📊 Tickets criados, resolvidos, tempo médio
+- 📊 Uso de IA (chatbot, priorização)
+- 📊 Uso de memória e CPU
+
+**Endpoint**: `GET /metrics`
+
+---
+
+##  Documentação Técnica
+
+### Arquitetura
+
+📚 [ARCHITECTURE.md](./docs/ARCHITECTURE.md) - Diagramas e decisões de arquitetura
+
+**Diagramas Incluídos:**
+- Fluxo geral do sistema (Frontend → Backend → Database)
+- Fluxo de autenticação (JWT)
+- Fluxo de criação de tickets com IA
+- Integração com serviços externos (Slack, Teams, WhatsApp)
+- Chatbot com IA
+- Deploy e monitoramento
+- Camadas de segurança
+
+### Banco de Dados
+
+📚 [DATABASE.md](./docs/DATABASE.md) - Schema, relacionamentos e otimizações
+
+**Conteúdo:**
+- ERD (Entity-Relationship Diagram) em Mermaid
+- Documentação de todas as tabelas
+- Pool de conexões Prisma
+- Estratégias de caching com Redis
+- Processamento de filas com BullMQ
+- Particionamento para alta escala
+- Índices e queries otimizadas
+- Row-Level Security
 
 ---
 

@@ -1,0 +1,56 @@
+name: Deploy Backend - Render
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'backend/**'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy para Render
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: ./backend
+    
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+          cache-dependency-path: ./backend/package-lock.json
+      
+      - name: Instalar dependências
+        run: npm ci
+      
+      - name: Executar testes
+        run: npm test
+      
+      - name: Build aplicação
+        run: npm run build
+      
+      - name: Deploy para Render
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: ${{ secrets.RENDER_SERVICE_ID }}
+          api-key: ${{ secrets.RENDER_API_KEY }}
+      
+      - name: Executar migrations
+        run: npx prisma migrate deploy
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      
+      - name: Notificar sucesso
+        if: success()
+        run: echo "✅ Deploy do backend realizado com sucesso!"
+      
+      - name: Notificar falha
+        if: failure()
+        run: echo "❌ Falha no deploy do backend"

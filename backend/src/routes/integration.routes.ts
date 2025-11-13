@@ -1,13 +1,12 @@
 import { Router } from 'express';
 import { IntegrationController } from '../controllers/integration.controller';
-import { authMiddleware } from '../middlewares/auth.middleware';
-import { roleMiddleware } from '../middlewares/role.middleware';
+import { authenticateToken, requireRole } from '../middlewares/auth.middleware';
 
 const router = Router();
 
 // Todas as rotas exigem autenticação e role ADMIN
-router.use(authMiddleware);
-router.use(roleMiddleware(['ADMIN']));
+router.use(authenticateToken);
+router.use(requireRole('ADMIN'));
 
 // Criar integração
 router.post('/', IntegrationController.create);

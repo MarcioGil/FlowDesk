@@ -1,0 +1,15 @@
+# Logs Directory
+
+Este diretório contém os arquivos de log da aplicação.
+
+## Estrutura
+
+- `error-*.log` - Apenas erros (mantidos por 30 dias)
+- `combined-*.log` - Todos os logs (mantidos por 30 dias)
+- `http-*.log` - Requisições HTTP (mantidos por 14 dias)
+
+## Rotação
+
+Os logs são rotacionados diariamente e automaticamente removidos após o período de retenção.
+
+**Nota**: Arquivos `.log` são ignorados pelo Git (.gitignore)

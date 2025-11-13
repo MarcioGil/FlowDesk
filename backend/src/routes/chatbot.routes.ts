@@ -1,11 +1,11 @@
 import { Router } from 'express';
 import { ChatbotController } from '../controllers/chatbot.controller';
-import { authMiddleware } from '../middlewares/auth.middleware';
+import { authenticateToken } from '../middlewares/auth.middleware';
 
 const router = Router();
 
 // Todas as rotas exigem autenticação
-router.use(authMiddleware);
+router.use(authenticateToken);
 
 // Processar mensagem do chatbot
 router.post('/message', ChatbotController.processMessage);

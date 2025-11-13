@@ -1,12 +1,11 @@
 import { Router } from 'express';
 import { FeedbackController } from '../controllers/feedback.controller';
-import { authMiddleware } from '../middlewares/auth.middleware';
-import { roleMiddleware } from '../middlewares/role.middleware';
+import { authenticateToken, requireRole } from '../middlewares/auth.middleware';
 
 const router = Router();
 
 // Todas as rotas exigem autenticação
-router.use(authMiddleware);
+router.use(authenticateToken);
 
 // Criar feedback (usuário autenticado)
 router.post('/', FeedbackController.create);
@@ -17,14 +16,14 @@ router.get('/:id', FeedbackController.getById);
 // Listar feedbacks (Admin/Attendant)
 router.get(
   '/',
-  roleMiddleware(['ADMIN', 'ATTENDANT']),
+  requireRole('ADMIN', 'ATTENDANT'),
   FeedbackController.list
 );
 
 // Estatísticas de feedback (Admin/Attendant)
 router.get(
   '/stats',
-  roleMiddleware(['ADMIN', 'ATTENDANT']),
+  requireRole('ADMIN', 'ATTENDANT'),
   FeedbackController.getStats
 );
 
